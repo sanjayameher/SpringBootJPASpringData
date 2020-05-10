@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd"
+         updateCheck="true" monitoring="autodetect" dynamicConfig="true" >
+	
+	<diskStore path="java.io.tmpdir" />
+	 <defaultCache eternal="true" maxElementsInMemory="100" overflowToDisk="false" statistics="true" />
+	
+  <cache name="bookingList"
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000"
+		eternal="false"
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="60" 
+		timeToLiveSeconds="60"
+		memoryStoreEvictionPolicy="LFU"
+		transactionalMode="off"
+		statistics="true"
+		>
+		
+		<persistence strategy="localTempSwap" />
+		
+	</cache>
+
+</ehcache>
+
+  <!-- Accessing an entry in bookingInfo that has been idle for more than 60 second causes that element to be evicted. -->   
+       
+  <!-- Entries in myCache can remain in the cache forever if accessed at least once per 60 minutes (timeToLiveSeconds). 
+       However, unexpired entries may still be flushed based on other limitations -->     

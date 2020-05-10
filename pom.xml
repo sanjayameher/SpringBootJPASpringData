@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.verizon.sdjpa</groupId>
-  <artifactId>SpringBootJPASpringDt</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-<packaging>jar</packaging>
+	<groupId>com.jyotionjava.sdjpa</groupId>
+	<artifactId>SpringBootJPASpringData</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>SpringBootJPASpringData</name>
 	<description>SpringBootJPASpringData project for Spring Boot with Spring Data JPA implementation</description>
@@ -59,9 +59,15 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
+		<!-- Unit Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- JAX-RS -->
@@ -121,35 +127,40 @@
 			</exclusions>
 		</dependency>
 
-		<!-- Oracle JDBC driver -->
-		<!-- <dependency>
-			<groupId>oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.3</version>
+		<!-- apache commons codedc -->		
+		<dependency>		
+		<groupId>commons-codec</groupId>		
+		<artifactId>commons-codec</artifactId>		
 		</dependency>
-		Common DBCP2 connection pool-->
+
+		<!-- Oracle JDBC driver -->
 		<dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+			<!-- <groupId>oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version> -->
+			 <groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+						
+		</dependency>
+		<!-- Common DBCP2 connection pool -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.1.1</version>
-		</dependency> 
+		</dependency>
 
-		<!-- javamelody-core It will impact on swagger API -->
-		<!-- <dependency>
+		<!-- javamelody-core It will impact on swagger API  
+		<dependency>
 			<groupId>net.bull.javamelody</groupId>
 			<artifactId>javamelody-spring-boot-starter</artifactId>
 			<version>1.69.0</version>
-		</dependency>
-         Java melody auto-proxy issues solution
+		</dependency> -->
+        <!--  Java melody auto-proxy issues solution 
+        
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency> -->
-
 	</dependencies>
 
 
@@ -167,19 +178,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
-		<!-- <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.12.4</version>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
-      </plugin> -->
-      
 		</plugins>
 	</build>
 
 
 </project>
-  
